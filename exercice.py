@@ -23,6 +23,7 @@ def format_histogram(histogram):
 	ROW_CHAR = "*"
 
 	alignment = len(str(len(histogram) - 1))
+	# Approche avec compréhension de liste
 	return "\n".join([f"{i : >{alignment}} {ROW_CHAR * elem}" for i, elem in enumerate(histogram) if i != 0])
 	# result = ""
 	# for i, elem in enumerate(histogram):
@@ -41,6 +42,7 @@ def format_horizontal_histogram(histogram):
 	for i in range (height - 1, -1, -1):
 		# for elem in histogram[1:]:
 		# 	result += BLOCK_CHAR if elem >= i + 1 else " "
+		# Approche de compréhension de liste FAVORISÉ!
 		result += "".join([BLOCK_CHAR if elem >= i + 1 else " " for elem in histogram[1:]]) + "\n"
 		# result += "\n"
 	result += LINE_CHAR * len(histogram)
